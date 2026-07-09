@@ -1,0 +1,157 @@
+.panel {
+  position: fixed;
+  right: 20px;
+  top: 96px;
+  width: min(420px, calc(100vw - 24px));
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+  z-index: 30;
+  border-radius: 18px;
+  border: 1px solid rgba(9, 41, 96, 0.16);
+  background: linear-gradient(140deg, rgba(250, 252, 255, 0.98), rgba(242, 247, 255, 0.96));
+  box-shadow: 0 26px 60px rgba(9, 41, 96, 0.18);
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+}
+
+.header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #0a2e5b;
+}
+
+.header p {
+  margin: 6px 0 0;
+  color: #435268;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  border: 1px solid rgba(10, 46, 91, 0.18);
+  border-radius: 999px;
+  background: #fff;
+  color: #0f2f55;
+  font-size: 0.73rem;
+  font-weight: 700;
+  padding: 7px 10px;
+  cursor: pointer;
+}
+
+.chip:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.askForm {
+  display: grid;
+  gap: 8px;
+}
+
+.askForm textarea {
+  resize: vertical;
+  min-height: 72px;
+  border-radius: 12px;
+  border: 1px solid rgba(12, 59, 122, 0.2);
+  background: #fff;
+  font-family: inherit;
+  font-size: 0.84rem;
+  padding: 10px 11px;
+}
+
+.askForm button {
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0d4da1, #06387c);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 9px 12px;
+  cursor: pointer;
+}
+
+.askForm button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  margin: 0;
+  color: #8f1f1f;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.responseWrap {
+  display: grid;
+  gap: 10px;
+}
+
+.answerCard,
+.metaCard {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(8, 50, 104, 0.14);
+  border-radius: 13px;
+  padding: 10px 11px;
+}
+
+.answerHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.refusal {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #982f2f;
+  background: rgba(152, 47, 47, 0.08);
+  border-radius: 999px;
+  padding: 3px 7px;
+  font-weight: 700;
+}
+
+.answerCard p,
+.metaCard p {
+  margin: 0;
+  color: #223349;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.metaCard ul {
+  margin: 8px 0 0;
+  padding-left: 16px;
+  color: #1f3047;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.metaCard pre {
+  margin: 8px 0 0;
+  border-radius: 10px;
+  background: #f6f9ff;
+  border: 1px solid rgba(12, 60, 128, 0.12);
+  padding: 8px;
+  font-size: 0.7rem;
+  line-height: 1.4;
+  overflow: auto;
+}
+
+@media (max-width: 1100px) {
+  .panel {
+    position: static;
+    width: 100%;
+    max-height: none;
+    margin-top: 16px;
+  }
+}

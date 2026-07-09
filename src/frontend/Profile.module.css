@@ -1,0 +1,470 @@
+:global(body) {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f8f9fa;
+  color: #191c1d;
+}
+
+:global(*) {
+  box-sizing: border-box;
+}
+
+:global(.material-symbols-outlined) {
+  font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+}
+
+.page {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+.main {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  margin-left: 84px;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.bgLayer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(10, 46, 255, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.waveLayer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.18;
+}
+
+.topbar {
+  position: relative;
+  z-index: 15;
+  backdrop-filter: blur(12px);
+  background: rgba(248, 249, 250, 0.85);
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.kicker {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #0059bb;
+  font-weight: 700;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: -0.02em;
+  color: #191c1d;
+}
+
+.topActions {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.iconButton {
+  width: 2.3rem;
+  height: 2.3rem;
+  border: 0;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: #5f6677;
+  background: transparent;
+}
+
+.iconButton:hover {
+  background: #edf0f4;
+}
+
+.contentWrap {
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+  padding: 1rem 0.75rem 2rem 0;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.profileCard,
+.sectionCard,
+.dangerCard {
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 12px 40px rgba(25, 28, 29, 0.06);
+}
+
+.profileCard {
+  position: relative;
+  overflow: hidden;
+  padding: 1.4rem 1.6rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem 2rem;
+  align-items: start;
+}
+
+.profileAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #0a2eff 0%, #0070ea 100%);
+}
+
+.profileHead {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    'avatar name'
+    'avatar email'
+    'avatar badge';
+  gap: 0.5rem 1rem;
+  align-items: start;
+}
+
+.avatarWrap {
+  position: relative;
+  grid-area: avatar;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 108px;
+  height: 108px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 4px solid #f3f4f5;
+}
+
+.cameraButton {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  width: 2.1rem;
+  height: 2.1rem;
+  border: 0;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #0a2eff;
+  color: #fff;
+}
+
+.profileHead h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #0f172a;
+  font-weight: 800;
+  grid-area: name;
+  text-align: left;
+}
+
+.email {
+  margin: 0;
+  color: #757689;
+  font-size: 0.9rem;
+  grid-area: email;
+  text-align: left;
+}
+
+.roleBadge {
+  margin: 0;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(10, 46, 255, 0.08);
+  color: #0a2eff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  grid-area: badge;
+  justify-self: start;
+}
+
+.roleBadge span {
+  font-size: 1rem;
+  font-variation-settings: 'FILL' 1;
+}
+
+.profileMeta {
+  margin-top: 0;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  grid-column: 2;
+  grid-row: 1;
+  align-items: stretch;
+  justify-content: center;
+  align-self: center;
+  min-width: 260px;
+}
+
+.profileMeta div {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  align-items: center;
+  column-gap: 24px;
+}
+
+.profileMeta span {
+  color: #757689;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.profileMeta strong {
+  font-size: 0.9rem;
+  color: #191c1d;
+  font-weight: 700;
+}
+
+.formColumn {
+  display: grid;
+  gap: 1rem;
+}
+
+.sectionCard {
+  padding: 1.8rem;
+}
+
+.sectionHead h3,
+.securityRow h3,
+.dangerCard h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.sectionHead p,
+.securityRow p,
+.dangerCard p {
+  margin: 0.35rem 0 0;
+  color: #5f6677;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.formGrid {
+  margin-top: 1.3rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.field span {
+  font-size: 0.68rem;
+  color: #444557;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding-left: 0.2rem;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  border: 0;
+  border-radius: 0.7rem;
+  background: #f3f4f5;
+  color: #191c1d;
+  padding: 0.78rem 0.9rem;
+  font-size: 0.87rem;
+  outline: none;
+}
+
+.field input:focus,
+.field select:focus {
+  box-shadow: 0 0 0 3px rgba(10, 46, 255, 0.16);
+}
+
+.fieldFull {
+  grid-column: 1 / -1;
+}
+
+.formActions {
+  margin-top: 1.4rem;
+  padding-top: 1.3rem;
+  border-top: 1px solid rgba(197, 197, 218, 0.38);
+  display: flex;
+  gap: 0.7rem;
+}
+
+.primaryButton,
+.secondaryButton,
+.primarySolidButton,
+.dangerButton {
+  border: 0;
+  border-radius: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primaryButton {
+  padding: 0.72rem 1.2rem;
+  color: #fff;
+  background: linear-gradient(135deg, #0a2eff 0%, #0070ea 100%);
+}
+
+.secondaryButton {
+  padding: 0.72rem 1.2rem;
+  color: #191c1d;
+  background: #e7e8e9;
+}
+
+.securityRow,
+.dangerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.primarySolidButton {
+  padding: 0.72rem 1rem;
+  color: #fff;
+  background: #0a2eff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.primarySolidButton span {
+  font-size: 1rem;
+}
+
+.dangerCard {
+  background: rgba(255, 218, 214, 0.42);
+  border: 1px solid rgba(186, 26, 26, 0.14);
+  padding: 1.8rem;
+}
+
+.dangerCard h3 {
+  color: #ba1a1a;
+}
+
+.dangerButton {
+  padding: 0.72rem 1rem;
+  border: 2px solid #ba1a1a;
+  background: transparent;
+  color: #ba1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.dangerButton:hover {
+  background: #ba1a1a;
+  color: #fff;
+}
+
+@media (max-width: 960px) {
+  .page {
+    height: auto;
+    overflow: visible;
+  }
+
+  .main {
+    margin-left: 0;
+    height: auto;
+    overflow: visible;
+    display: block;
+    padding-bottom: 5rem;
+  }
+
+  .topbar {
+    padding: 1rem 1rem;
+  }
+
+  .topbar h1 {
+    font-size: 1.45rem;
+  }
+
+  .contentWrap {
+    width: calc(100% - 1rem);
+    overflow: visible;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profileCard {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .profileMeta {
+    grid-column: 1;
+    grid-row: auto;
+    flex-direction: row;
+    gap: 1.4rem;
+    min-width: 0;
+    align-self: stretch;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .fieldFull {
+    grid-column: auto;
+  }
+
+  .securityRow,
+  .dangerRow,
+  .formActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primarySolidButton,
+  .dangerButton,
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    justify-content: center;
+  }
+}

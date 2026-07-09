@@ -1,0 +1,4 @@
+date,store_id,sku_id,units_sold,inventory_level,inventory_on_hand,inventory_in_transit,promo_flag,discount_pct,holiday_flag,store_name,region,city,store_type,sku_name,category,brand,unit_price,shelf_life_days,reorder_point,lead_time_days
+2026-04-18,S001,SKU100,24,110,110,30,true,5,false,Downtown Central,South,Bengaluru,Metro,Spark Cola 500ml,Beverages,Spark,35,270,90,4
+2026-04-19,S001,SKU101,18,70,70,0,false,0,false,Downtown Central,South,Bengaluru,Metro,Crunch Chips 100g,Snacks,CrunchCo,20,180,60,3
+2026-04-19,S002,SKU100,19,95,95,20,false,0,false,Lakeside Retail,South,Mysuru,Urban,Spark Cola 500ml,Beverages,Spark,35,270,80,4
