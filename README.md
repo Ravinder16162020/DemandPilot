@@ -2,7 +2,7 @@
 
 ## GitHub Repository
 
-Project repository: https://github.com/MohammedAshikM3003/demand-pilot.git
+Project repository: https://github.com/Ravinder16162020/DemandPilot.git
 
 ## React + Vite
 
