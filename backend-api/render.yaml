@@ -1,6 +1,7 @@
 services:
   - type: web
     name: demandpilot-backend
+    rootDir: backend-api
     env: node
     buildCommand: npm install
     startCommand: npm start
