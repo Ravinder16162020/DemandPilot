@@ -4,6 +4,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 import styles from './login.module.css'
 
 const AUTH_KEY = 'demandpilot-authenticated'
+const API_BASE_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:4000'}/api`
 
 function Login() {
   const navigate = useNavigate()
@@ -18,7 +19,7 @@ function Login() {
         console.log('Google Login Success:', tokenResponse)
         
         // Send the token to backend for verification
-        const response = await fetch('http://localhost:4000/api/auth/google', {
+        const response = await fetch(`${API_BASE_URL}/auth/google`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -97,7 +98,7 @@ function Login() {
     }
 
     try {
-      const response = await fetch('http://localhost:4000/api/auth/login', {
+      const response = await fetch(`${API_BASE_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

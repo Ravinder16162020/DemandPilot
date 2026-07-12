@@ -4,7 +4,7 @@ import RunProvenance from './RunProvenance'
 import CopilotPanel from './CopilotPanel'
 import styles from './Dashboard.module.css'
 
-const API_BASE_URL = 'http://localhost:4000/api'
+const API_BASE_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:4000'}/api`
 
 const territoryStats = [
   { name: 'North America', healthy: 70, lowStock: 20, stockout: 10, stable: 70 },

@@ -4,6 +4,7 @@ import { useGoogleLogin } from '@react-oauth/google'
 import styles from './signup.module.css'
 
 const AUTH_KEY = 'demandpilot-authenticated'
+const API_BASE_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:4000'}/api`
 
 function Signup() {
   const navigate = useNavigate()
@@ -29,7 +30,7 @@ function Signup() {
         console.log('Google Login Success:', tokenResponse)
         
         // Send the token to backend for verification
-        const response = await fetch('http://localhost:4000/api/auth/google', {
+        const response = await fetch(`${API_BASE_URL}/auth/google`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -134,7 +135,7 @@ function Signup() {
     setError('')
 
     try {
-      const response = await fetch('http://localhost:4000/api/auth/signup', {
+      const response = await fetch(`${API_BASE_URL}/auth/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -171,7 +172,7 @@ function Signup() {
     setError('')
 
     try {
-      const response = await fetch('http://localhost:4000/api/otp/send-otp', {
+      const response = await fetch(`${API_BASE_URL}/otp/send-otp`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -213,7 +214,7 @@ function Signup() {
     setError('')
 
     try {
-      const response = await fetch('http://localhost:4000/api/otp/send-otp', {
+      const response = await fetch(`${API_BASE_URL}/otp/send-otp`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -254,7 +255,7 @@ function Signup() {
     setError('')
 
     try {
-      const response = await fetch('http://localhost:4000/api/otp/verify-otp', {
+      const response = await fetch(`${API_BASE_URL}/otp/verify-otp`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

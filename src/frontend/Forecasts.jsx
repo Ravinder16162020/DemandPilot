@@ -3,7 +3,7 @@ import Sidebar from '../Components/Sidebar/Sidebar'
 import CopilotPanel from './CopilotPanel'
 import styles from './Forecasts.module.css'
 
-const API_BASE_URL = 'http://localhost:4000/api'
+const API_BASE_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:4000'}/api`
 
 const summaryCards = [
   { label: 'Avg. Forecast Accuracy', value: '94.2%', meta: '+1.2%', metaClass: 'good' },

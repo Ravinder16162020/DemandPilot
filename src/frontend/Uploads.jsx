@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Sidebar from '../Components/Sidebar/Sidebar'
 import styles from './Uploads.module.css'
 
-const API_BASE_URL = 'http://localhost:4000/api'
+const API_BASE_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:4000'}/api`
 
 function Uploads() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
